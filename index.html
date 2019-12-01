@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang=es>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
+		<script src="sketch.js"></script>
+		<script src="cell.js"></script>
+		<link rel='stylesheet' href='style.css'>
+		<title>Generador de Laberintos</title>
+	</head>
+	<body>
+		<div style="margin-left: 10px;"id='sketch-window'></div>
+		<div id='options'>
+			<h1 id='title'>DFS MAZE GENERATOR</h1>
+			<div id=buttons>
+				<div class=label-button-grid id=current-div>
+					<span>Show current cell: </span>
+					<label id='current-sw' class='opt-sw'>
+						<input id='current-check' type=checkbox checked=false onclick='toggleCurrent()' autocomplete=off>
+						<span class='slider'></span>
+					</label>
+				</div>
+				<div class=label-button-grid id=trail-div>
+					<span>Show line trail: </span>
+					<label id='trail-sw' class='opt-sw'>
+						<input id='trail-check' type=checkbox checked=false onclick='toggleTrail()' autocomplete=off>
+						<span class='slider'></span>
+					</label>
+				</div>
+				<div class=label-button-grid id=cell-div>
+					<span>Show visited cells: </span>
+					<label id='cell-sw' class='opt-sw'>
+						<input id='cell-check' type=checkbox checked=false onclick='toggleCell()' autocomplete=off>
+						<span class='slider'></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<script>
+			if(!DISPLAY_CURRENT) document.getElementById('current-check').checked = false;
+			if(!DISPLAY_TRAIL) document.getElementById('trail-check').checked = false;
+			if(!DISPLAY_CELLS) document.getElementById('cell-check').checked = false;
+		</script>
+	</body>
+</html>
